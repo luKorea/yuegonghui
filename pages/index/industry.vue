@@ -1,0 +1,94 @@
+<template>
+	<view class="industry-container">
+		<view class="industry-header">
+			<view class="title"><text>{{title}}</text></view>
+			<view class="more" @click="goMore('industry')"><text>更多 &gt;</text></view>
+		</view>
+		<view class="industry-content">
+			<view class="content-item" v-for="item in data" :key='item.id'>
+				<image :src="item.img" mode="aspectFill" />
+				<text class="title">{{item.title}}</text>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		props: {
+			data: {
+				type: Array,
+				default: () => []
+			}
+		},
+		data() {
+			return {
+				title: '产业工会直播'
+			}
+		},
+		methods: {
+			goMore(type) {
+				uni.navigateTo({
+				    url: `../more/more?type=${type}&title=${this.title}`
+				});
+			}
+		}
+	}
+</script>
+
+<style>
+	.industry-container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 20rpx;
+	}
+
+	.industry-container .industry-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.industry-header .title {
+		font-size: 30rpx;
+		font-family: 'Source Han Sans CN';
+		font-weight: bold;
+		color: #333333;
+	}
+
+	.industry-header .more {
+		font-size: 24rpx;
+		font-family: 'Microsoft YaHei';
+		font-weight: 400;
+		color: #999999;
+		vertical-align: middle;
+	}
+	.industry-container .industry-content {
+		margin-top: 20rpx;
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	.industry-container .industry-content .content-item {
+		width: 314rpx;
+		height: 240rpx;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+	.content-item .title {
+		font-size: 26rpx;
+		font-family: Microsoft YaHei;
+		font-weight: 400;
+		color: #333333;
+		margin-top: 10rpx;
+		margin-bottom: 20rpx;
+	}
+	.content-item image {
+		width: 100%;
+		height: 100%;
+		border-radius: 10rpx;
+	}
+</style>
