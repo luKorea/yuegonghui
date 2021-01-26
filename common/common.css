@@ -1,5 +1,23 @@
 .ellipsis {
 	overflow: hidden;
-	text-overflow:ellipsis;
+	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.my-modal {
+	position: fixed;
+	top: 402rpx;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	/* display: block; */
+	/* box-sizing: border-box; */
+	/* background-color: #007AFF; */
+	background-color: rgba(1, 1, 1, .5);
+}
+
+.close-btn {
+	width: 70rpx;
+	height: 70rpx;
 }

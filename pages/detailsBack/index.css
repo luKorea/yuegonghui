@@ -1,0 +1,213 @@
+.details-container {
+	width: 100%;
+	height: 100%;
+}
+
+
+.detail-container .video {
+	width: 100%;
+	height: 402rpx;
+	position: relative;
+}
+
+.detail-container .video video {
+	width: 100%;
+	height: 100%;
+}
+
+.detail-container .video .modal {
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	left: 0;
+	top: 0;
+	width: 100%;
+	color: #fff;
+	display: inline-block;
+}
+
+.detail-container .video .user-modal {
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	color: #fff;
+	display: inline-block;
+}
+
+.detail-container .video .user-modal .wrap {
+	margin: 30rpx;
+	margin-right: 20rpx;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.detail-container .video .user-modal .wrap .button {
+	text-align: center;
+	width: 160rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	background: #FFAF35;
+	border-radius: 10rpx;
+}
+
+.detail-container .video .user-modal .wrap .button image {
+	width: 26rpx;
+	height: 26rpx;
+	margin-right: 8rpx;
+}
+
+
+.detail-container .video .modal .modal-top {
+	margin: 40rpx;
+	display: flex;
+	justify-content: space-between;
+	z-index: 99;
+}
+
+.detail-container .video .modal .modal-top .modal-user {
+	font-size: 24rpx;
+	font-family: Microsoft YaHei;
+	font-weight: 400;
+	color: #FFFFFF;
+	z-index: 99;
+}
+
+.modal-money {
+	margin-top: -20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+}
+
+.modal-money image {
+	width: 42rpx;
+	height: 60rpx;
+}
+
+.modal-money .time {
+	font-size: 20rpx;
+	font-family: Microsoft YaHei;
+	font-weight: 400;
+	color: #AFAFAF;
+	z-index: 99;
+}
+
+.detail-container .content {
+	margin: 0 40rpx;
+}
+
+.item {
+	background-color: #FFFFFF;
+	height: 100rpx;
+	display: flex;
+}
+
+.item-select {
+	font-size: 30rpx;
+	flex: 1;
+	text-align: center;
+	height: 100rpx;
+	line-height: 100rpx;
+	color: #333;
+	box-sizing: border-box;
+}
+
+.item-active {
+	border-bottom: 4rpx solid #F40001;
+}
+
+.item-top {
+	margin-top: 26rpx;
+}
+
+.video-list {
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 20rpx;
+}
+
+.video-list image {
+	width: 400rpx;
+	height: 240rpx;
+	border-radius: 10rpx;
+	margin-right: 20rpx;
+}
+
+.video-list .list-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.video-list .list-content .content-text {
+	font-size: 28rpx;
+	font-family: Microsoft YaHei;
+	font-weight: 400;
+	color: #333333;
+}
+
+.video-list .list-content .content-user {
+	font-size: 24rpx;
+	font-family: Microsoft YaHei;
+	font-weight: 400;
+	color: #999999;
+}
+
+
+/* 红包未打开区域 */
+.no-wallet {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.no-wallet image {
+	width: 600rpx;
+	height: 800rpx;
+	margin-bottom: 40rpx;
+}
+
+.no-wallet .close-btn {
+	width: 70rpx;
+	height: 70rpx;
+}
+
+.money-modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+}
+.money-modal .wallet-money {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 130rpx;
+	left: 0;
+	color: #fff;
+	font-size: 40rpx;
+	width: 100%;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+	color: #FF2740;
+	text-align: center;
+}
+
+
+
+.user-member {
+	margin: 30rpx;
+	font-size: 24rpx;
+	font-family: Microsoft YaHei;
+	font-weight: 400;
+	color: #FFFFFF;
+}

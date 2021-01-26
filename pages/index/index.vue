@@ -6,9 +6,9 @@
 			<!-- 往期专辑 -->
 			<my-album :data='albumData'></my-album>
 			<!-- 地市直播 -->
-			<my-city :data='cityData'></my-city>
+			<my-city :data='cityData' :city='city'  :cityMore='cityMore'></my-city>
 			<!-- 产业工会 -->
-			<my-industry :data='industryData'></my-industry>
+			<my-industry :data='industryData' :industry='industry' :industryMore='industryMore'></my-industry>
 		</view>
 	</view>
 </template>
@@ -30,7 +30,20 @@
 		},
 		data() {
 			return {
-				swiperData: [img1, img2, img3],
+				swiperData: [
+					{
+						id: 1,
+						img: img1,
+					},
+					{
+						id: 2,
+						img: img2,
+					},
+					{
+						id: 3,
+						img: img3,
+					}
+				],
 				albumData: [
 					{
 						id: 1,
@@ -53,6 +66,10 @@
 						img: img1
 					}
 				],
+				city: [],
+				cityMore: [],
+				industry: [],
+				industryMore:  [],
 				cityData: [
 					{
 						id: 1,
@@ -103,16 +120,33 @@
 			}
 		},
 		onLoad() {
-			console.log(this)
-			this.$request({
-				methods: 'get',
-				url: 'www.baidu.com'
-			}).then(res => {
-				console.log(res)
-			}).catch(err => console.log(err))
+			this.getTypeMore();
 		},
 		methods: {
-
+			getTypeMore() {
+				this.$request.get('/blade-live-type/liveTypeTree')
+				.then(res => {
+					if(res.code === 200) {
+						let data = res.data;
+						data.forEach(item => {
+							// TODO  需要做截断处理
+							if(item.LiveTypeName === '地市直播') {
+								this.city = item.children;
+								this.cityMore = item.children;
+							} else if(item.LiveTypeName === '产业直播') {
+								this.industry = item.children;
+								this.industryMore = item.children;
+							}
+						})
+					}
+				}).catch(err => {
+					console.log(err)
+					uni.showToast({
+						icon: 'none',
+						title: '请求失败' + err
+					})
+				})
+			}
 		}
 	}
 </script>

@@ -1,28 +1,91 @@
 {
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			// uview-ui
+			"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
+			// @dcloudio
+			"^uni-(.*)": "@dcloudio/uniui/lib/uni-$1/uni-$1.vue"
+		}
+	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "直播频道"
+				"navigationBarTitleText": "粤工惠直播"
+				// "h5": {
+				// 	"titleNView": false
+				// }
 			}
 		},
 		{
 			"path": "pages/studio/studio",
 			"style": {
 				"navigationBarTitleText": "申请成为主播"
+				// "h5": {
+				// 	"titleNView": false
+				// }
 			}
 		},
 		{
-			"path": "pages/more/more"
+			"path": "pages/more/more",
+			"style": {
+				"h5": {
+					"titleNView": false
+				}
+			}
 		},
 		{
-			"path": "pages/details/details"
+			"path": "pages/details/details",
+			"style": {
+				"h5": {
+					"titleNView": false
+				},
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "share"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/albumDetails/albumDetails",
+			"style": {
+				"h5": {
+					"titleNView": false
+				},
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "share"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/albumMore/albumMore",
+			"style": {
+				"h5": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/download/lownload",
+			"style": {
+				"h5": {
+					"titleNView": false
+				}
+			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#E60012",
 		"backgroundColor": "#E60012",
-		"navigationBarTextStyle":"white"
+		"navigationBarTextStyle": "white"
 	},
 	//  设置底部选项
 	"tabBar": {

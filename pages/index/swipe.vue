@@ -1,9 +1,9 @@
 <template>
 	<view class="swiper-container">
 		<swiper class="swiper" circular :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
-			<swiper-item v-for="(item, index) in data" :key='index'>
+			<swiper-item v-for="(item, index) in data" :key='index' @click="goDetail(item.id)">
 				<view class="swiper-item">
-					<image :src="item" mode="aspectFill" />
+					<image :src="item.img" mode="aspectFill" />
 				</view>
 			</swiper-item>
 		</swiper>
@@ -26,6 +26,13 @@
 				duration: 500
 			}
 		},
+		methods: {
+			goDetail(id) {
+				uni.navigateTo({
+				    url: `../details/details?id=${id}`
+				});
+			}
+		}
 	}
 </script>
 

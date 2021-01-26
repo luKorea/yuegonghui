@@ -11,9 +11,10 @@
 		</view>
 		<scroll-view class="scroll-view_H" scroll-x="true">
 			<view class="album-content">
-				<view class="content-item" v-for="item in data" :key='item.id'>
+				<view class="content-item" v-for="item in data" :key='item.id' @click="goAlbum(item.id)">
 					<image :src="item.img" mode="aspectFill" />
 					<text class="title">{{item.title}}</text>
+					<text class="member">999人已观看</text>
 				</view>
 			</view>
 		</scroll-view>
@@ -36,7 +37,12 @@
 		methods: {
 			goMore(type) {
 				uni.navigateTo({
-				    url: `../more/more?type=${type}&title=${this.title}`
+				    url: `../albumMore/albumMore?type=${type}`
+				});
+			},
+			goAlbum(id) {
+				uni.navigateTo({
+				    url: `../albumDetails/albumDetails?id=${id}`
 				});
 			}
 		}
@@ -93,6 +99,22 @@
 		justify-content: space-between;
 		margin-bottom: 20rpx;
 	}
+	
+	
+	.album-container .album-content .member {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-color: rgba(1,1,1,.3);
+		color: #fff;
+		font-size: 12rpx;
+		height: 24rpx;
+		line-height: 24rpx;
+		border-bottom-right-radius: 3rpx;
+	}
 
 	.album-container .album-content .content-item {
 		width: 216rpx;
@@ -100,6 +122,7 @@
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
+		position: relative;
 		margin: 0 8rpx 10rpx 8rpx;
 	}
 
@@ -118,6 +141,6 @@
 	.content-item image {
 		width: 100%;
 		height: 100%;
-		border-radius: 10rpx;
+		border-radius: 4rpx;
 	}
 </style>
